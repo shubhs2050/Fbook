@@ -1,0 +1,63 @@
+<div class="container">
+  <% if current_user %>
+    <h1>Welcome to Small Book</h1>
+    <p>The facebook clone made in ruby on rails.</p>
+    <%= image_tag "frontpagelogo.jpg", class: "img-responsive" %>
+    <p>Made by <%= link_to 'Kenneth Gould', "http://www.javascriptisscary.com" %> </p>
+  </div>
+  <% else %>
+  <div class="col-md-7 col-xs-12">
+    <h1>Welcome to Small Book</h1>
+    <p>The facebook clone made in ruby on rails.</p>
+    <%= image_tag "frontpagelogo.jpg", class: "img-responsive" %>
+    <p>Made by <%= link_to 'Kenneth Gould', "http://www.javascriptisscary.com" %> </p>
+  </div>
+  <div class="col-md-5 col-xs-12">
+    <h2><strong>Sign Up</strong></h2>
+    <h4>It's free and always will be.</h4>
+    <div class="form">
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h3><%= pluralize(@user.errors.count, "error") %> prohibited your user profile from being saved:</h3>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+         <% end %>
+        </ul>
+      </div>
+      <% end %>
+      <%= form_for(@user) do |f| %>
+        
+        <div class="inline">
+          <div class= "form-group col-xs-6" id="first-name">
+            <%= f.text_field :first_name , class: "form-control input-lg", placeholder: "First Name"%>
+          </div>
+          <div class= "form-group col-xs-6" id="last-name">
+            <%= f.text_field :last_name, class: "form-control input-lg", placeholder: "Last Name" %>
+          </div>
+        </div>
+          
+        <div class= "field form-group">
+          <%= f.email_field :email, class: "form-control input-lg", placeholder: "Email Address"%>
+        </div>
+        <div class= "field form-group">
+          <%= f.password_field :password, class: "form-control input-lg", placeholder: "Password"%>
+        </div>
+         <div class= "field form-group">
+          <%= f.password_field :password_confirmation, class: "form-control input-lg", placeholder: " Reenter Password"%>
+        </div>
+        <div class="field form-group">
+          <%= f.text_field :birthday, class:"form-control input-lg", id: "datepicker", placeholder: "Date of Birth YYYY-MM-DD" %>
+        </div>
+        <div class="field form-group">
+          <%= f.number_field :zip, class:"form-control input-lg", placeholder: "6 Digit Zip Code" %>
+        </div>
+        <div class="form-group text-center">
+          <%= f.submit "Create an account", class: "btn btn-success sign-up" %>
+    
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>

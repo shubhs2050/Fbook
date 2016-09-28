@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require jquery-ui/datepicker
+ *= require_self
+ */
+
+
+
+body {
+    background-color: #E9EAED;
+}
+
+.notice {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.alert {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 5px
+}
+
+#wrapper {
+    width: 1075px;
+    margin: 0 auto;
+}
+
+#wrapper .container {
+    max-width: 100%;
+    display:block;
+    }
+    
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-xs-12 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.col-sm-4 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.col-sm-8 {
+  padding-left: 4px;
+  padding-right: 4px;
+}

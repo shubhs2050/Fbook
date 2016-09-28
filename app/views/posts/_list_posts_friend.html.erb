@@ -1,0 +1,17 @@
+<%all_posts = group_posts(@friendships, @profile) %>
+
+<%unless all_posts == nil %>
+  <%all_posts.each do |post| %>
+
+      <div class="wall-contain">
+       <%= render 'posts/post_friend', {post: post} %>
+      
+      <% if post.comments %>
+        <%post.comments.each do |comment| %>
+          <%= render 'comments/comment', {comment: comment} %>
+        <% end %>
+      <% end %> 
+      <%= render 'comments/new_comment', {post: post} %>
+      </div>
+  <% end %>
+<%end%>
